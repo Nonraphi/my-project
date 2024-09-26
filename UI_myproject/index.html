@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myUI</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+    <div class="user_container">
+        <h2>Table User</h2>
+        <div class="add-user">
+            <button id="open-modal">Add User</button>
+        </div>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search users...">
+            <input type="submit" id="submit-search" value="Search">
+        </div>
+        <table class="tableData" id="users-table">
+            <thead id="header-row">
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>BirthDate</th>
+                    <th>Optional</th>
+                </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+    </div>
+    <div id="user-modal" class="modal">
+        <form id="user-form">
+            <span class="close">&times;</span>
+            <h3>Add User</h3>
+            <div class="form-group">
+                <label for="name">Username:</label>
+                <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+                <label for="date">BirthDate:</label>
+                <input type="date" id="date" name="date" required/>
+            </div>
+            <button type="submit" class="btn-submit">Add+</button>
+        </form>
+    </div>
+    
+    <div id="edit-user-modal" class="modal">
+        <form id="edit-user-form">
+            <span class="close-edit">&times;</span>
+            <h3>Edit User</h3>
+            <h2 id="edit-id"></h2>
+            <div class="form-group">
+                <label for="edit-name">Name:</label>
+                <input type="text" id="edit-u_name" required />
+            </div>
+            <div class="form-group">
+                <label for="edit-date">Birth Date:</label>
+                <input type="date" id="edit-u_date" required />
+            </div>
+                <button type="submit" class="submit-btn" id="submit-btn">Update</button>
+        </form>
+    </div>
+    <script src="./scripts/app.js"></script>
+</body>
+
+</html>
