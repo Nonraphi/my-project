@@ -2,6 +2,7 @@ import express from 'express';
 import IndexConfig from './src/index.config.js'
 import IndexRouter from './src/index.route.js'
 import IndexMiddleware from './src/index.middleware.js'
+import dotenv from 'dotenv'
 import { fileURLToPath } from 'url'
 import { dirname,join } from 'path';
 const app = express();
@@ -26,7 +27,6 @@ app.use('/', (req, res) => {
     })
 })
 
-const PORT = 3000
-app.listen(PORT, () => {
-    console.log(`Server is running on port [${PORT}]`)
+app.listen(process.env.MY_PORT, () => {
+    console.log(`Server is running on port [${process.env.MY_PORT}]`)
 })
